@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calories counter</title>
+</head>
+<body>
+    <div style="width: 49%; border: 1px solid black; float: left;">
+        <h2>Welcome</h2><h3>{{ user.username }}</h3>
+
+        <h4>Calories eaten</h4>
+        <p>{{ user.eaten }}</p>
+        <h4>Calories to eat</h4>
+        <p>{{ user.toEat }}</p>
+    </div>
+    <div style="width: 49%; border: 1px solid black; float: left;">
+        <div style="width: 100%;">
+            <a>
+                <button type="button">
+                    History
+                </button>
+            </a>
+            <a>
+                <button type="button">
+                    Add product
+                </button>
+            </a>
+            <a>
+                <button type="button">
+                    List
+                </button>
+            </a>
+        </div>
+        <div>
+            <p>Breakfast: {{ meals.breakfast }}</p>
+            <a href="/calorie/breakfast/">
+                <button>
+                    Add product
+                </button>
+            </a>
+        </div>
+        <div>
+            <p>Lunch: {{ meals.lunch }}</p>
+            <a href="/calorie/lunch/">
+                <button>
+                    Add product
+                </button>
+            </a>
+        </div>
+        <div>
+            <p>Dinner: {{ meals.dinner }}</p>
+            <a href="/calorie/dinner/">
+                <button>
+                    Add product
+                </button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
