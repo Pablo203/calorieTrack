@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import UserIntreface, MealList, Meals, History, Product
+from .forms import ProductForm
 import datetime
 
 # Create your views here.
@@ -68,3 +69,16 @@ def historyDetail(request, historyDate):
     wantedDate = datetime.datetime.strptime(historyDate, '%Y-%m-%d')
     meals = get_object_or_404(Meals, date=wantedDate)
     return render(request, 'historyDetail.html', {'date': historyDate, 'meal': meals})
+
+def addNewProduct(request):
+    return render(request, 'addNewProduct.html')
+
+def newProductExecute(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            #productName = form.cleaned_data['name']
+            #calories = form.cleaned_data['calories']
+            newProduct = Product.objects.create(name=form.cleaned_data['name'], calories=form.cleaned_data['calories'])
+            newProduct.save()
+    return HttpResponseRedirect("/calorie")
