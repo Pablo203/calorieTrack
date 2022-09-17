@@ -17,7 +17,7 @@
     </div>
     <div style="width: 49%; border: 1px solid black; float: left;">
         <div style="width: 100%;">
-            <a>
+            <a href="{% url 'history' %}">
                 <button type="button">
                     History
                 </button>
@@ -35,7 +35,7 @@
         </div>
         <div>
             <p>Breakfast: {{ meals.breakfast }}</p>
-            <a href="/calorie/breakfast/">
+            <a href="{% url 'showProd' 'breakfast' %}">
                 <button>
                     Add product
                 </button>
@@ -43,7 +43,7 @@
         </div>
         <div>
             <p>Lunch: {{ meals.lunch }}</p>
-            <a href="/calorie/lunch/">
+            <a href="{% url 'showProd' 'lunch' %}">
                 <button>
                     Add product
                 </button>
@@ -51,7 +51,7 @@
         </div>
         <div>
             <p>Dinner: {{ meals.dinner }}</p>
-            <a href="/calorie/dinner/">
+            <a href="{% url 'showProd' 'dinner' %}">
                 <button>
                     Add product
                 </button>

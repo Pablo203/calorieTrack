@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History</title>
+    <style>
+        tr, td{
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
     <table style="border: 1px solid black;">
@@ -15,10 +20,15 @@
             </tr>
         </thead>
         <tbody>
-            {% for position in History %}
+            {% for position in history %}
             <tr>
-                <td>{{ position.date }}</td>
+                <a>
+                    <td>
+                        {{ position.date }}
+                    </td>
+                </a>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
 </body>

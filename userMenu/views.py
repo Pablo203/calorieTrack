@@ -60,5 +60,6 @@ def addProductToMeal(request, meal, product_name):
     return HttpResponseRedirect('/calorie/')
 
 
-def history(request, mydate):
-    return HttpResponse(mydate)
+def history(request):
+    #history = get_object_or_404(History)
+    return render(request, 'history.html', {'history':History.objects.all()})
