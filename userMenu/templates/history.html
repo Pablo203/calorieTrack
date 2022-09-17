@@ -21,12 +21,14 @@
         </thead>
         <tbody>
             {% for position in history %}
-            <tr>
-                <a>
+            <tr>      
                     <td>
-                        {{ position.date }}
+                        <a href="{% url 'historyDetail' position.date %}">
+                            <button>
+                                {{ position.date }}                
+                            </button>
+                        </a>
                     </td>
-                </a>
             </tr>
             {% endfor %}
         </tbody>

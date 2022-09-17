@@ -63,3 +63,8 @@ def addProductToMeal(request, meal, product_name):
 def history(request):
     #history = get_object_or_404(History)
     return render(request, 'history.html', {'history':History.objects.all()})
+
+def historyDetail(request, historyDate):
+    wantedDate = datetime.datetime.strptime(historyDate, '%Y-%m-%d')
+    meals = get_object_or_404(Meals, date=wantedDate)
+    return render(request, 'historyDetail.html', {'date': historyDate, 'meal': meals})

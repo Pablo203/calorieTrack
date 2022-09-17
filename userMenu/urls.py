@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.menu, name='menu'),
     path('newDate/', views.newDate, name="date"),
     path('history/', views.history, name="history"),
+    path('<str:historyDate>', views.historyDetail, name='historyDetail'),
     path('<str:meal>/', views.showProductsToAdd, name="showProd"),
     path('<str:meal>/<str:product_name>/', views.addProductToMeal, name='meal')
 ]
